@@ -19,13 +19,14 @@ export default function SinglePlayer({player}) {
                     <img src= {`${player.imageUrl}`} />
 
                     <label htmlFor='select-dog'>Select Player</label>
+                    <br/>
                     <input 
                         input='submit'
                         type='submit'
                         />
                     
                     
-                    <button className="btn add" onClick= {() => navigate(singleDog)}>See Details</button>
+                    {/* <button className="btn add" onClick= {() => navigate(singleDog)}>See Details</button> */}
                 </div>
             </form>    
         </>
