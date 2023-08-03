@@ -25,12 +25,16 @@ export default function AllPlayers() {
         <div>
             {players.map((player) => {
                     return  (
+                        <form>
                         <div 
                             onClick={() => {setPlayers(player.id)}}
                             key = {player.id}>
+                            
                             <SinglePlayer player={player}/>
                             <RemovePlayer player={player}/>
                         </div>
+                        
+                        </form>
                         )   
                     }
                 )

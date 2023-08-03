@@ -29,12 +29,7 @@ export default function SinglePlayer({player}) {
                 <div className='player-form'>
                     <label htmlFor='select-pup'>
                     <br/>
-                        <input 
-                            value={pupSelect}
-                            defaultValue=""
-                            onChange={e => 
-                                setPupSelect(e.target.value)}
-                        />
+                       
                     </label>
                     </div>
                     <button type='submit' className="btn add-player" onClick= {() => navigate(singleDog)}>ADD</button>
