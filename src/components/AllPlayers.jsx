@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { dogPlayers } from '../API'
 //import { useNavigate } from 'react-router-dom'
 import SinglePlayer from './SinglePlayer'
+import RemovePlayer from './RemovePlayer';
 
 
 export default function AllPlayers() {
@@ -24,8 +25,11 @@ export default function AllPlayers() {
         <div>
             {players.map((player) => {
                     return  (
-                        <div key = {player.id}>
+                        <div 
+                            onClick={() => {setPlayers(player.id)}}
+                            key = {player.id}>
                             <SinglePlayer player={player}/>
+                            <RemovePlayer player={player}/>
                         </div>
                         )   
                     }

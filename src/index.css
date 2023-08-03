@@ -36,6 +36,10 @@ h1 {
   line-height: 1.1;
 }
 
+h4 {
+  font: italic;
+}
+
 img {
   width: 15%;
   padding: 2px;
@@ -52,9 +56,9 @@ img {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+  font-weight: 400;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
