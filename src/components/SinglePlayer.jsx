@@ -1,40 +1,57 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { dogPlayers } from '../API'
+// import { dogPlayers } from '../API'
 
 
 export default function SinglePlayer({player}) {
     const singleDog = useState(`${player.id}`);
+    const [pupSelect, setPupSelect] = useState([]);
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
+        // const form = e.target;
+        // const data = newFormData(form);
+        // console.log(data);
+        setPupSelect(currentPupSelect => { 
+            return [
+              ...currentPupSelect, 
+              { id: crypto.randomUUID(), title: singleDog, completed: false},
+            ]
+          })
     }
     
 
     return (
 
         <>
-            < form onSubmit={handleSubmit} className='single-player-form'>
+            <form onSubmit={handleSubmit} className='single-player-form'>
                 <div className='player-form'>
-                    <h4>{player.breed} </h4>
-                    <h4>{player.status}</h4>
-                    {/* <h4>{player.teamId} </h4> */}
-                    <img src= {`${player.imageUrl}`} />
-
-                    <label htmlFor='select-pup'>Select Player
+                    <label htmlFor='select-pup'>
                     <br/>
-                    <input 
-                        value={player}
-                        // onChange={e => player(e.target.value) }
-                        input='submit'
-                        type='submit'
+                        <input 
+                            value={pupSelect}
+                            defaultValue=""
+                            onChange={e => 
+                                setPupSelect(e.target.value)}
                         />
                     </label>
+                    </div>
+                    <button type='submit' className="btn add-player" onClick= {() => navigate(singleDog)}>ADD</button>
                     
-                    <button className="btn add" onClick= {() => navigate(singleDog)}>See Details</button>
-                </div>
-            </form>    
+                
+                </form> 
+                    <h2 className="header"> </h2>
+                        <ul>
+                            {/* <h4>{player.teamId} </h4> */}
+                            <img src= {`${player.imageUrl}`} />
+                            <h4>{player.breed} </h4>
+                            <h4>{player.status}</h4>
+                        </ul>
+                   
+            
+
+
         </>
         
     )

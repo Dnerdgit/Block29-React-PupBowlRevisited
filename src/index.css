@@ -40,6 +40,15 @@ h4 {
   font: italic;
 }
 
+.single-player-form {
+  display:inline-table;
+  flex-wrap:initial
+}
+
+.player-form {
+  display:flex;
+}
+
 img {
   width: 15%;
   padding: 2px;
@@ -47,10 +56,10 @@ img {
   border-radius: 4px;
   background-color: azure;
   font-family: 'Times New Roman', Times, serif;
-  margin: 0 auto 4.44rem auto;
+  margin: 0.5rem auto 1.44rem auto;
   align-items: flex-end;
   display:flex;
-  /* grid-template-columns: min-content; */
+  grid-template-columns: min-content;
 }
 
 button {
